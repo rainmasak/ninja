@@ -41,5 +41,5 @@ Included sample manifest.yml
 ```sh
 cd ninja
 mvn install
-cf push assignment
+cf push ninja-app
 ```
