@@ -1,0 +1,143 @@
+body {
+	background: #3C3B3F;
+	background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);
+	background: linear-gradient(to right, #605C3C, #3C3B3F);
+}
+
+#wrapper {
+	text-align: center;
+}
+
+#photoLink a {
+	color: #D8D8D8;
+}
+
+#overlay {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 2;
+	cursor: pointer;
+}
+
+table {
+	margin-top: 10px;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+td, th {
+	border: 1px solid #F2F2F2;
+	text-align: center;
+	padding: 8px;
+}
+
+.button {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+	font-size: 16px;
+	opacity: 0.83;
+}
+
+label:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.button, label {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	cursor: pointer;
+	opacity: 0.83;
+}
+
+#response {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	min-height: 20px;
+	opacity: 0.83;
+}
+
+.delBtn {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	opacity: 0.83;
+}
+
+.delBtn:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.thead {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+	opacity: 0.83;
+}
+
+#backLink:link, #backLink:visited {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	opacity: 0.83;
+}
+
+#backLink:hover, #backLink:active {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.closebtn:hover {
+	color: black;
+}

@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS photo;
+CREATE TABLE photo 
+(
+	id BIGINT NOT NULL PRIMARY KEY,
+	file_name VARCHAR(255),
+	image BLOB
+);

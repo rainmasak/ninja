@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ninja assignment</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body onload="onLoad()">
+		<div id="overlay" onclick="closeResponse()">
+			<div id="response">
+				<span class="closebtn" onclick="closeResponse()">&times;</span>
+				<strong id="reponseParagraph"></strong>
+			</div>
+		</div>
+		<form method="post" id="picform" enctype="multipart/form-data">
+			<input style="visibility: hidden" class="button" name="file" type="file" id="file" accept="image/*">
+			<label for="file">Choose a file</label>
+		</form>
+		<table>
+			<tbody id="photoLink">
+				
+			</tbody>
+		</table>		
+	</body>
+</html>
