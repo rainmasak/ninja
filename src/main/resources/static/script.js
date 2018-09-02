@@ -78,27 +78,37 @@ function getFiles() {
             aTag.id = f
             aTag.style.padding = '10px';
 
-            ajax('GET', '/photo?fileName=' + f, '', function(data2) {
-                var pre = document.getElementById("photo_" + data2.fileName);
-                pre.src = "data:image/png;base64," + data2.image;
-            });
-
+            var imgaTag = document.createElement('a');
+            imgaTag.id='photo_a_' + f;
+            imgaTag.appendChild(preview);
+            
             var db = document.createElement('button');
             db.className = "delBtn"
-            db.onclick = function() {
-                ajax('DELETE', '/photo', f, function(data) {
-                    var item2remove = document.getElementById("tr_" + data.fileName);
-                    mydiv.removeChild(item2remove);
-                    createMessage(data.status, data.message)
-                    getFiles()
-                });
-            }
             db.innerHTML = 'delete';
             db.id = 'del' + f;
             db.style.padding = '2px';
+            
+            ajax('GET', '/photo?fileName=' + f, '', function(data2) {
+            	var apre = document.getElementById("photo_a_" + data2.fileName);
+            	apre.href = 'photo.html?file=' + data2.fileName
+                var pre = document.getElementById("photo_" + data2.fileName);
+                pre.src = "data:image/png;base64," + data2.image;
+                pre.alt = data2.fileName
+                             
+                var btn = document.getElementById("del" + data2.fileName);
+                btn.onclick = function() {               	
+                    ajax('DELETE', '/photo', data2.fileName, function(data) {
+                        var item2remove = document.getElementById("tr_" + data.fileName);
+                        mydiv.removeChild(item2remove);
+                        createMessage(data.status, data.message)
+                        getFiles()
+                    });
+                }              
+                
+            });
 
             td1.appendChild(aTag);
-            td2.appendChild(preview);
+            td2.appendChild(imgaTag);
             td3.appendChild(db);
             tr.appendChild(td1);
             tr.appendChild(td2);
